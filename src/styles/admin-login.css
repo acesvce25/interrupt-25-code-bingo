@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+@keyframes float {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-20px) rotate(10deg);
+    }
+}
+
+@keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+}
+
+@keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}
+
+.container {
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #4c1d95, #312e81, #1e3a8a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.background-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.hash-icon {
+    color: rgba(255, 255, 255, 0.1);
+    width: 2rem;
+    height: 2rem;
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+    position: absolute;
+}
+
+/* Card styles */
+.card {
+    max-width: 28rem;
+    width: 100%;
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 0.5s ease, background-color 0.5s ease;
+}
+
+.card:hover {
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Header styles */
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.logo {
+    width: 4rem;
+    height: 4rem;
+    color: white;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.sparkle {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #fde047;
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    animation: spin-slow 3s linear infinite;
+}
+
+.title {
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: #bfdbfe;
+}
+
+/* Form styles */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    outline: none;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.input:focus {
+    border-color: transparent;
+    box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.5);
+}
+
+.button {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    color: white;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(to right, #3b82f6, #4f46e5);
+}
+
+.button:hover:not(:disabled) {
+    background: linear-gradient(to right, #2563eb, #4338ca);
+    transform: translateY(-2px);
+}
+
+.button:disabled {
+    background: #22c55e;
+    cursor: not-allowed;
+}
+
+/* Loading spinner */
+.loading-spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spinner {
+    animation: spin 1s linear infinite;
+    margin-right: 0.75rem;
+    height: 1.25rem;
+    width: 1.25rem;
+}
+
+/* Success message */
+.success-message {
+    margin-top: 1rem;
+    text-align: center;
+    color: #86efac;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Error message */
+.error-message {
+  margin-top: 1rem;
+  text-align: center;
+  color: #f87171;
+  animation: fadeIn 0.5s ease-out forwards;
+}
