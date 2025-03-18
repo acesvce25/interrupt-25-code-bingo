@@ -1,7 +1,7 @@
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Admin_login from './components/Admin-login'
-import Admin from './components/admin'
+import Admin from './components/Admin'
 import AdminTeamPage from './components/AdminTeamPage'
 import Login from './components/Login'
 import Home from './components/Home'
