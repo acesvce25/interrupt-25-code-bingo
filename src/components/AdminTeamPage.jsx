@@ -96,7 +96,7 @@ function AdminTeamPage() {
     setTeamSolved((prev) => [...prev, id]);
     setBingoStatus(newBingoStatus);
     try {
-      await fetch(`http://localhost:8080/api/updateDetails`, {
+      await fetch(`https://interrupt-25-code-bingo-server.vercel.app/api/updateDetails`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -134,7 +134,7 @@ function AdminTeamPage() {
     if (localStorage.getItem("user_id") === "ace.csesvce23@gmail.com") {
       async function fetchTeamDetails() {
         try {
-          const res = await fetch(`http://localhost:8080/api/findUserDetails`, {
+          const res = await fetch(`https://interrupt-25-code-bingo-server.vercel.app/api/findUserDetails`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

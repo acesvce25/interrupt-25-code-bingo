@@ -9,7 +9,7 @@ function Admin() {
   const [loading, setLoading] = useState(true);
 
   async function fetchTeamDetails() {
-    const res = await fetch("http://localhost:8080/api/allTeams");
+    const res = await fetch("https://interrupt-25-code-bingo-server.vercel.app/api/allTeams");
     const {data} = await res.json();
     console.log(data);
     

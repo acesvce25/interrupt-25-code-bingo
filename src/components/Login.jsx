@@ -27,7 +27,7 @@ function Login() {
     setErrorMessage("");
 
     try {
-      await fetch("http://localhost:8080/api/login", {
+      await fetch("https://interrupt-25-code-bingo-server.vercel.app/api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json", // Important for JSON data

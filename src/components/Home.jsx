@@ -16,7 +16,7 @@ function Home() {
     } else {
       const fetchUserSolvedQns = async () => {
         try {
-          const response = await fetch('http://localhost:8080/api/findUserDetails', {
+          const response = await fetch('https://interrupt-25-code-bingo-server.vercel.app/api/findUserDetails', {
             method: "POST",
             headers: {
               "Content-Type": "application/json", // Important for JSON data
